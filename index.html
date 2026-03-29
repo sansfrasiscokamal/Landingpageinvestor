@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Fashion Anak - Peluang Kolaborasi</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #5D5FEF; /* Modern Blue untuk kesan profesional */
+            --accent-color: #FF808B; /* Pastel Pink untuk kesan anak-anak */
+            --text-dark: #2D3436;
+            --text-light: #636E72;
+            --bg-light: #F9FAFB;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* --- Global Styles --- */
+        h1, h2, h3, h4 { font-weight: 700; }
+        p { color: var(--text-light); line-height: 1.8; }
+        .section-title { margin-bottom: 3rem; position: relative; display: inline-block; }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+        }
+        .nav-link:hover { color: var(--accent-color) !important; }
+
+        /* --- Hero Section (RESPONSIVE FIX) --- */
+        .hero {
+            padding: 120px 0 80px 0;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .hero-content h1 span { color: var(--primary-color); }
+        
+        /* Placeholder image style */
+        .hero-img-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #E2E8F0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94A3B8;
+            font-weight: 600;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 991.98px) {
+            .hero { padding: 100px 0 60px 0; text-align: center; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-img-placeholder { height: 300px; margin-top: 3rem; }
+        }
+
+        /* --- Buttons --- */
+        .btn-custom {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+        .btn-primary-custom:hover {
+            background-color: #4a4cd9;
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        /* --- Value Section --- */
+        .values { padding: 80px 0; background-color: var(--bg-light); }
+        .value-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #eaeaea;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        .value-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(93, 95, 239, 0.1);
+            color: var(--primary-color);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Status Section (Tersendat Modal) --- */
+        .status { padding: 80px 0; }
+        .status-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .pain-point-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: start;
+        }
+        .pain-point-list li::before {
+            content: '✕';
+            color: #e74c3c;
+            font-weight: bold;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+
+        /* --- Call to Action (CTA) --- */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #8183ff 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta h2 { color: white; margin-bottom: 1.5rem; }
+        .cta p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 3rem auto; }
+        .btn-white {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+        }
+        .btn-white:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-3px);
+        }
+
+        /* --- Footer --- */
+        footer { padding: 30px 0; background-color: var(--bg-light); border-top: 1px solid #eaeaea; }
+
+        /* Fix for smaller screens padding */
+        @media (max-width: 575.98px) {
+            .section-title { font-size: 1.75rem; }
+            .value-card { padding: 30px; }
+            .status-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Butang</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Potensi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#masalah">Tantangan</a></li>
+                    <li class="nav-item"><a class="nav-link btn-custom btn-primary-custom text-white nav-btn ms-lg-3" href="#kontak">Kolaborasi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <span class="badge bg-light text-primary mb-3 p-2 px-3 shadow-sm rounded-pill">Peluang Investasi & Kemitraan</span>
+                    <h1>Membangun Kembali <span>Brand Fashion Anak</span> yang Tertunda</h1>
+                    <p class="lead mb-4">Kami memiliki pengalaman, akses produksi, dan mimpi besar. Kami hanya butuh satu kepingan terakhir: Mitra Strategis.</p>
+                    <div class="d-sm-flex gap-3 justify-content-lg-start justify-content-center">
+                        <a href="#masalah" class="btn btn-custom btn-primary-custom mb-3 mb-sm-0">Pelajari Tantangan</a>
+                        <a href="#kontak" class="btn btn-custom btn-outline-secondary">Hubungi Saya</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+    <div id="heroCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
+        
+
+        <div class="carousel-inner">
+            
+            <div class="carousel-item active" data-bs-interval="5000"> <img src="img/produksitanggerang1.jpg" class="d-block w-100 object-fit-cover" alt="Suasana Produksi Tangerang" style="height: 400px;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Tempat produksi Tangerang</h5>
+                    <p>Kapasitas produksi siap jalan.</p>
+                </div>
+            </div>
+            <div class="carousel-item active" data-bs-interval="5000"> <img src="img/produksitanggerang2.jpg" class="d-block w-100 object-fit-cover" alt="Suasana Produksi Tangerang" style="height: 400px;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Tempat produksi Tangerang</h5>
+                    <p>Kapasitas produksi siap jalan.</p>
+                </div>
+            </div>
+            
+
+            <div class="carousel-item" data-bs-interval="5000"> <img src="img/samplebajuanak.jpg" class="d-block w-100 object-fit-cover" alt="Sampel Baju Anak Butang" style="height: 400px;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Sampel Produk</h5>
+                    <p>Desain nyaman dan bahan berkualitas.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="5000"> <img src="img/penjahittasik.jpg" class="d-block w-100 object-fit-cover" alt="Produksi Tasikmalaya" style="height: 400px;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Penjahit Tasikmalaya</h5>
+                    <p>Berpengalaman di fashion anak.</p>
+                </div>
+            </div>
+
+            </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="tentang" class="values">
+        <div class="container text-center">
+            <h2 class="section-title">Aset & Potensi Kami</h2>
+            <p class="text-center max-width-600 mx-auto mb-5">Kami tidak memulai dari nol. Kami memulai dengan fondasi yang kuat.</p>
+            <div class="row g-4 text-start">
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="icon-box">✓</div>
+                        <h4>Akses Produksi</h4>
+                        <p>Dapur produksi sudah siap jalan, baik di jaringan konveksi <strong>Tangerang</strong> maupun <strong>Tasikmalaya</strong>.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="icon-box">✓</div>
+                        <h4>Pengalaman Nyata</h4>
+                        <p>Tumbuh di lingkungan jualan baju (offline) bersama orang tua, memahami psikologi pembeli kelas menengah ke bawah.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="icon-box">✓</div>
+                        <h4>Rekam Jejak Digital</h4>
+                        <p>Telah menjalankan usaha mandiri dari 2024 hingga sekarang, mengelola operasional offline maupun online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="skema" class="values bg-white">
+        <div class="container text-center">
+            <h2 class="section-title">Prinsip Kerja Sama</h2>
+            <p class="text-center max-width-600 mx-auto mb-5">Kami mengedepankan keberkahan dalam berbisnis dengan sistem yang adil dan terbuka.</p>
+            <div class="row g-4 text-start">
+                <div class="col-md-4">
+                    <div class="value-card border-top-accent">
+                        <div class="icon-box">🤝</div>
+                        <h4>Bagi Hasil (Profit Sharing)</h4>
+                        <p>Keuntungan dihitung dari <b>laba bersih (profit)</b> yang didapatkan, bukan dari besarnya nilai investasi. Adil bagi pengelola dan pemodal.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card border-top-accent">
+                        <div class="icon-box">📊</div>
+                        <h4>Keuangan Transparan</h4>
+                        <p>Setiap rupiah yang masuk dan keluar dicatat secara mendetail. Laporan keuangan dapat diakses secara terbuka oleh mitra.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card border-top-accent">
+                        <div class="icon-box">🌙</div>
+                        <h4>Sesuai Syariat</h4>
+                        <p>Seluruh proses bisnis, akad kerja sama, hingga pemasaran diupayakan fleksibel namun tetap terjaga dalam koridor syariat agama.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="masalah" class="status bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Kondisi Saat Ini & <span style="color:var(--accent-color)">Langkah Selanjutnya</span></h2>
+                    <p>Produksi di <b>Tangerang & Tasikmalaya</b> sudah siap, pengalaman jualan sejak 2024 sudah ada. Saat ini kami membutuhkan dukungan untuk akselerasi pada:</p>
+                    <ol>
+                        <li class="mb-2">Biaya Iklan (Meta Ads) untuk jangkauan luas.</li>
+                        <li class="mb-2">Branding Visual (Fotografer & Konten Kreator).</li>
+                        <li class="mb-2">Partner yang memiliki Visi & Misi yang sama.</li>
+                    </ol>
+                    <div class="alert alert-info rounded-3 border-0 shadow-sm" role="alert">
+                         Sistem bisnis bersifat <strong>Flexible</strong> dan adaptif terhadap perkembangan pasar.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="cta">
+        <div class="container">
+            <h2>Tertarik Menjadi Bagian dari Perjalanan Ini?</h2>
+            <p>Jika Anda memiliki modal, keahlian marketing, atau visi yang sama, mari berdiskusi untuk membangun brand ini bersama.</p>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20diskusi%20soal%20kolaborasi%20brand%20baju%20anak." class="btn btn-custom btn-white btn-lg" target="_blank">
+                Ngobrol via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1 fw-bold">Butang Fashion Anak</p>
+            <p class="mb-0 text-muted">&copy; 2026. Halaman Kemitraan Strategis.</p>
+            <small class="text-muted">Tangerang - Tasikmalaya</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth Scrolling untuk navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // Tutup navbar mobile setelah klik (jika terbuka)
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
